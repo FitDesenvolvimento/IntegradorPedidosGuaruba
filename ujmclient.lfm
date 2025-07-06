@@ -1,0 +1,211 @@
+object Form1: TForm1
+  Left = 182
+  Height = 318
+  Top = 140
+  Width = 525
+  BorderIcons = [biSystemMenu]
+  Caption = 'FIT - Integração de Pedidos do Cloud'
+  ClientHeight = 318
+  ClientWidth = 525
+  Color = clWindow
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object btnIntegrar: TButton
+    Left = 96
+    Height = 25
+    Top = 208
+    Width = 131
+    Caption = 'Integrar'
+    OnClick = btnIntegrarClick
+    TabOrder = 0
+  end
+  object lblPasso1: TLabel
+    Left = 64
+    Height = 15
+    Top = 40
+    Width = 208
+    Caption = 'Passo 1 - Buscando pedidos no Cloud...'
+    ParentColor = False
+  end
+  object lblPasso2: TLabel
+    Left = 64
+    Height = 15
+    Top = 64
+    Width = 290
+    Caption = 'Passo 2 - Integrando pedidos do Cloud na retaguarda...'
+    ParentColor = False
+  end
+  object lblPasso3: TLabel
+    Left = 64
+    Height = 15
+    Top = 88
+    Width = 288
+    Caption = 'Passo 3 - Atualizando situação dos pedidos no Cloud...'
+    ParentColor = False
+  end
+  object lblPasso4: TLabel
+    Left = 65
+    Height = 15
+    Top = 112
+    Width = 162
+    Caption = 'Passo 4 - Processo encerrado...'
+    ParentColor = False
+  end
+  object btnSair: TButton
+    Left = 272
+    Height = 25
+    Top = 208
+    Width = 131
+    Caption = 'Sair'
+    OnClick = btnSairClick
+    TabOrder = 1
+  end
+  object lblP1Ok: TLabel
+    Left = 32
+    Height = 17
+    Top = 40
+    Width = 20
+    Caption = '✔'
+    Color = clBtnHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Visible = False
+  end
+  object lblP2Ok: TLabel
+    Left = 32
+    Height = 17
+    Top = 64
+    Width = 20
+    Caption = '✔'
+    Color = clBtnHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Visible = False
+  end
+  object lblP3Ok: TLabel
+    Left = 32
+    Height = 17
+    Top = 88
+    Width = 20
+    Caption = '✔'
+    Color = clBtnHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Visible = False
+  end
+  object lblP4Ok: TLabel
+    Left = 32
+    Height = 17
+    Top = 112
+    Width = 20
+    Caption = '✔'
+    Color = clBtnHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    Visible = False
+  end
+  object mtPedidos: TMemDataset
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'dtpedido'
+        DataType = ftString
+        Size = 10
+      end    
+      item
+        Name = 'vendedor'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'cliente'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'tipo'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'forma_pagamento'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'situacao'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'obs'
+        DataType = ftWideString
+        Size = 50
+      end    
+      item
+        Name = 'usuario'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'total'
+        DataType = ftString
+        Size = 10
+      end>
+    Left = 32
+    Top = 256
+  end
+  object mtItensPedido: TMemDataset
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'pedido'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'produto'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'quantidade'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'unitario'
+        DataType = ftString
+        Size = 10
+      end    
+      item
+        Name = 'total'
+        DataType = ftString
+        Size = 10
+      end>
+    Left = 112
+    Top = 256
+  end
+end
